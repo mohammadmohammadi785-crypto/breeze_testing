@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -12,6 +13,13 @@ class UserController extends Controller
     public function index()
     {
         //
+        Gate::authorize('teacher-auth');
+        if(Gate::allows('teacher-auth')){
+            echo "Salam shoma ustad asted";
+        }
+        else{
+            abort(403);
+        }
     }
 
     /**

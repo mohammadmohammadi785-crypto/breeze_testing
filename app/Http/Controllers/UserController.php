@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         //
-       echo "you are a Teacher";
+       echo "Hey you are a Teacher";
     }
 
     /**

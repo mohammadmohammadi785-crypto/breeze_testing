@@ -20,4 +20,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('user', [UserController::class, "index"])->middleware('can:teacher-auth');
 
+Route::post("create-post",[PostController::class, "create"]);
+Route::get("Post",[PostController::class, "index"]);
+Route::view("Post/create", 'Post.create');
+Route::put('Post/update/{id}', [PostController::class, 'update']);
+Route::get('Post/edit/{id}', [PostController::class, 'edit']);
+
 require __DIR__.'/auth.php';

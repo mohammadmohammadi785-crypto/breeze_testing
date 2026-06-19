@@ -13,13 +13,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        Gate::authorize('teacher-auth');
-        if(Gate::allows('teacher-auth')){
-            echo "Salam shoma ustad asted";
-        }
-        else{
-            abort(403);
-        }
+       echo "you are a Teacher";
     }
 
     /**

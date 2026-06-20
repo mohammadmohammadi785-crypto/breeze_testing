@@ -27,4 +27,8 @@ Route::view("Post/create", 'Post.create');
 Route::put('Post/update/{id}', [PostController::class, 'update']);
 Route::get('Post/edit/{id}', [PostController::class, 'edit']);
 
+Route::view('/product/create', 'Product.create');
+Route::post('/product/add', [ProductController::class, 'create']);
+Route::get('product', [ProductController::class, 'index']);
+
 require __DIR__.'/auth.php';

@@ -55,7 +55,7 @@
                     <h1 class="mb-1 font-medium">Let's get started</h1>
                     @can('teacher-auth')
                         <h1 class="text-2xl">You are a Teacher</h1>
-                        else
+                        @else
                             <h1 class="text-2xl">you are not authorized as a teacher</h1>
                     @endcan
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel has an incredibly rich ecosystem. <br>We suggest starting with the following.</p>

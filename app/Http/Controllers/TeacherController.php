@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class TeacherController extends Controller
 {
@@ -12,6 +13,10 @@ class TeacherController extends Controller
     public function index()
     {
         //
+       $teachers = User::where('role', 'teacher')->get();
+        return response()->json(
+            ['data' => $teachers]
+        );
     }
 
     /**

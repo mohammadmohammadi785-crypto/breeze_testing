@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,5 +32,7 @@ Route::get('Post/edit/{id}', [PostController::class, 'edit']);
 Route::view('/product/create', 'Product.create');
 Route::post('/product/add', [ProductController::class, 'create']);
 Route::get('product', [ProductController::class, 'index']);
+
+Route::get("teacher", [TeacherController::class, "index"])->middleware(TeacherMiddleware::class);
 
 require __DIR__.'/auth.php';

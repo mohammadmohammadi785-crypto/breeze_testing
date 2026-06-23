@@ -17,9 +17,9 @@ class TeacherMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $teacher = Auth::user();
-        if (!$teacher || $teacher->role !== 'teacher') {
+        if ($teacher->role !== 'teacher') {
             return back();
-        }
+        } 
         return $next($request);
     }
 }

@@ -29,10 +29,6 @@ Route::view("Post/create", 'Post.create');
 Route::put('Post/update/{id}', [PostController::class, 'update']);
 Route::get('Post/edit/{id}', [PostController::class, 'edit']);
 
-Route::view('/product/create', 'Product.create');
-Route::post('/product/add', [ProductController::class, 'create']);
-Route::get('product', [ProductController::class, 'index']);
-
-Route::get("teacher", [TeacherController::class, "index"])->middleware(TeacherMiddleware::class);
+// Route::get("teacher", [TeacherController::class, "index"])->middleware(TeacherMiddleware::class);
 
 require __DIR__.'/auth.php';

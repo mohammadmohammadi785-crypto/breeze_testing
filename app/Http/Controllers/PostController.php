@@ -12,16 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        Gate::authorize('view');
-        if(Gate::allows('view')){
-           $posts = Post::all();
-           return response()->json([
-            "data" => $posts,
-           ]);
-        }
-        else{
-            abort(403);
-        }
+        $posts = Post::orderBy("title", "asc")->get();
+        return view("posts")->with("posts", $posts);
     }
 
     /**

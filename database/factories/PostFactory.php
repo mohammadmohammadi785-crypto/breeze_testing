@@ -19,6 +19,9 @@ class PostFactory extends Factory
     {
         return [
             //
+            "title"=>$this->faker->sentence(6),
+            "body"=>$this->faker->sentence(20),
+            "user_id"=>$this->faker->numberBetween(1,22),
         ];
     }
 }

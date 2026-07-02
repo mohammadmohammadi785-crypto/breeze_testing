@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,12 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('user', [UserController::class, "index"])->middleware('can:teacher-auth');
-
-Route::post("create-post",[PostController::class, "create"]);
-Route::get("Post",[PostController::class, "index"]);
-Route::view("Post/create", 'Post.create');
-Route::put('Post/update/{id}', [PostController::class, 'update']);
-Route::get('Post/edit/{id}', [PostController::class, 'edit']);
 
 // Route::get("teacher", [TeacherController::class, "index"])->middleware(TeacherMiddleware::class);
 

@@ -19,10 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get("posts", [PostController::class, "index"]);
-
-    Route::view('/product/create', 'Product.create');
-    Route::post('/product/add', [ProductController::class, 'create']);
-    Route::get('product', [ProductController::class, 'index']);
 });
 
 Route::get('user', [UserController::class, "index"])->middleware('can:teacher-auth');

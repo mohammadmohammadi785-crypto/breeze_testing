@@ -26,7 +26,7 @@
                     <tr>
                         <td class="border py-2 text-center">{{ $post->title }}</td>
                         <td class="border py-2 text-center">{{ $post->body }}</td>
-                        @can('update')
+                        @can('update', $post)
                         <td class="border py-2 text-center">
                             <a href="" class="bg-blue-500 text-white px-4 py-2 rounded-md">Update</a>
                         </td>

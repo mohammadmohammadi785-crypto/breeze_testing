@@ -33,9 +33,9 @@
                         @endcan
                         @can("delete", $post)
                         <td>
-                            <form action="{{ URL('/posts/{$id}') }}"  method="post">
+                            <form action="{{ URL('/posts', $post->id) }}"  method="post">
                                 @csrf    
-                                @method('DELETE')
+                                @method('delete')
                                 <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
                             </form>
                         </td>

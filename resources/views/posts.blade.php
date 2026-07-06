@@ -26,18 +26,18 @@
                     <tr>
                         <td class="border py-2 text-center">{{ $post->title }}</td>
                         <td class="border py-2 text-center">{{ $post->body }}</td>
-                        @can('update', $post)
+                        @can("UPDATE")
                         <td class="border py-2 text-center">
                             <a href="" class="bg-blue-500 text-white px-4 py-2 rounded-md">Update</a>
                         </td>
                         @endcan
-                        @can ("delete", $post)
+                        @can("delete", $post)
                         <td>
-                        <form action="{{ URL('/posts', $post->id) }}" method="post">
-                            @csrf    
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
-                        </form>
+                            <form action="{{ URL('/posts', $post->id) }}" method="post">
+                                @csrf    
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                            </form>
                         </td>
                         @endcan
                     </tr>

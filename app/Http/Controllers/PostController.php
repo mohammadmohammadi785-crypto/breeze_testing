@@ -46,6 +46,7 @@ class PostController extends Controller
     public function edit(string $id)
     {
         //
+        Gate::authorize('update');
     }
 
     /**
@@ -61,7 +62,7 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        $post = Post::findOrFail($id)->get();
+        $post = Post::findOrFail($id);
         if(Gate::allows('delete', $post)){    
             $post->delete();
             return redirect("/posts");

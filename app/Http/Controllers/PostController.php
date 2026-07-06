@@ -62,13 +62,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        $post = Post::findOrFail($id);
-        if(Gate::allows('delete', $post)){    
-            $post->delete();
-            return redirect("/posts");
-        }
-        else{
-            abort(403);
-        }
+        $post = Post::where("id",$id)->get();
+        $post->delete();
+        return redirect("/posts");
     }
 }

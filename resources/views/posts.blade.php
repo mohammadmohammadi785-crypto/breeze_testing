@@ -26,14 +26,14 @@
                     <tr>
                         <td class="border py-2 text-center">{{ $post->title }}</td>
                         <td class="border py-2 text-center">{{ $post->body }}</td>
-                        @can("UPDATE")
+                        @can("update")
                         <td class="border py-2 text-center">
                             <a href="" class="bg-blue-500 text-white px-4 py-2 rounded-md">Update</a>
                         </td>
                         @endcan
                         @can("delete", $post)
                         <td>
-                            <form action="{{ URL('/posts', $post->id) }}" method="post">
+                            <form action="{{ URL('/posts/{$id}') }}"  method="post">
                                 @csrf    
                                 @method('DELETE')
                                 <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
